@@ -4,8 +4,8 @@ class Settings():
 	def __init__(self):
 		"""初始化游戏设置"""
 		#屏幕设置
-		self.screen_width = 1366
-		self.screen_height = 768
+		self.screen_width = 1200
+		self.screen_height = 675
 		self.screen_wh =(self.screen_width,self.screen_height)
 		self.bg_color = (0,191,255)
 		#飞船的设置
@@ -16,3 +16,5 @@ class Settings():
 		self.bullet_height = 15
 		self.bullet_color = 255,127,80
 		self.bullets_allowed = 3
+		#外星人的设置
+		self.alien_speed_factor = 1
