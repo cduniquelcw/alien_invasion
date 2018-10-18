@@ -9,12 +9,15 @@ class Settings():
 		self.screen_wh =(self.screen_width,self.screen_height)
 		self.bg_color = (0,191,255)
 		#飞船的设置
-		self.ship_speed_factor = 15
+		self.ship_speed_factor = 3
 		#子弹的设置
-		self.bullet_speed_factor = 1
+		self.bullet_speed_factor = 15
 		self.bullet_width =3
 		self.bullet_height = 15
 		self.bullet_color = 255,127,80
 		self.bullets_allowed = 3
 		#外星人的设置
-		self.alien_speed_factor = 1
+		self.alien_speed_factor = 2
+		self.fleet_drop_speed = 8
+		#fleet_direction为1表示向右移动，-1表示向左移动
+		self.fleet_direction = 1
