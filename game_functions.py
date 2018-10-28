@@ -93,6 +93,8 @@ def check_bullet_alien_collisions(ai_settings,screen,stats,sb,ship,aliens,bullet
 		#提高等级
 		stats.level += 1
 		sb.prep_level()
+		#放置飞船至屏幕底部中央
+		ship.center_ship()
 
 		create_fleet(ai_settings,screen,ship,aliens)
 

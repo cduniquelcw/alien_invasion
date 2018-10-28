@@ -67,8 +67,10 @@ class Scoreboard():
 	def prep_ship(self):
 		"""显示还余下多少飞船"""
 		self.ships = Group()
+
 		for ship_number in range(self.stats.ships_left):
 			ship = Ship(self.ai_settings,self.screen)
+			ship.image = pygame.image.load('images/Guaiguai_limit.png')#另外加载小的图标
 			ship.rect.x = 10 + ship_number * ship.rect.width
 			ship.rect.y = 10
 			self.ships.add(ship)

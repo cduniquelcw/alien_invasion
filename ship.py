@@ -13,10 +13,7 @@ class Ship(Sprite):
 		self.image = pygame.image.load('images/Guaiguai.png')
 		self.rect = self.image.get_rect()
 		self.screen_rect = screen.get_rect()
-
-		#放置飞船至屏幕底部中央
-		self.rect.centerx = self.screen_rect.centerx
-		self.rect.bottom = self.screen_rect.bottom
+		self.center_ship()
 
 		#centerx中存储小数
 		self.center = float(self.rect.centerx)
