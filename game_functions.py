@@ -222,6 +222,7 @@ def check_high_score(stats,sb):
 	"""检查是否诞生了新的最高分"""
 	if stats.score > stats.high_score:
 		stats.high_score = stats.score
+		write_high_score(stats)
 		sb.prep_high_score()
 
 def check_aliens_bottom(ai_settings,screen,stats,sb,ship,aliens,bullets):
@@ -232,10 +233,18 @@ def check_aliens_bottom(ai_settings,screen,stats,sb,ship,aliens,bullets):
 			#像飞船被外星人撞到一样处理
 			ship_hit(ai_settings,screen,stats,sb,ship,aliens,bullets)
 			break
+def write_high_score(stats):
+	#将最高分写入文件
+	file_name = 'High_Score.json'
+	with open(file_name,'w')as f_ob:
+		json.dump(stats.high_score,f_ob)
 
-	def write_high_score(stats,):
-		#将最高分写入文件
-		with open('High_Score.json','w')as write_file:
-			json.dump(stats.high_score,write_file)
-
-
+def load_high_score():
+	#若最高分文件存在，加载最高分；若不存在，返回0
+	file_name = 'High_Score.json'
+	try:
+		with open(file_name)as f_ob:
+			x = json.load(f_ob)
+	except FileNotFoundError:
+		x = 0
+	return x
